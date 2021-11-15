@@ -1,0 +1,186 @@
+// Catalog.
+
+.catalog {
+  background-color: $light-background;
+  border-bottom: 1px solid $light-background;
+}
+
+.catalog__inner {
+  @include center-fix-width(20px, 1166px);
+  padding-top: 148px;
+
+  @media (max-width: $tablet-width) {
+    padding-top: 50px;
+  }
+}
+
+.catalog__inner h2 {
+  @include font(30px, 30px);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 50px;
+  color: $section-title;
+  text-align: center;
+
+  @media (max-width: $tablet-width) {
+    @include font(24px, 41px);
+    margin-bottom: 30px;
+  }
+}
+
+.catalog__list {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  justify-content: space-between;
+  margin-bottom: 147px;
+
+  @media (max-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 69px;
+  }
+
+  @media (max-width: $mobile-width) {
+    gap: 40px;
+    margin-bottom: 53px;
+  }
+}
+
+.catalog__item {
+  &:nth-child(3n + 1) {
+    margin-top: 10px;
+
+    @media (max-width: $tablet-width) {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(3n + 2) {
+    margin-top: 39px;
+
+    @media (max-width: $tablet-width) {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(3n + 3) {
+    margin-top: 0;
+  }
+}
+
+.catalog__bike-type {
+  width: 100%;
+  margin: 0;
+
+  @media (max-width: $tablet-width) {
+    width: 270px;
+  }
+}
+
+.catalog__pic-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+  line-height: 0;
+
+  @media (max-width: $tablet-width) {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 21px;
+  }
+}
+
+.catalog__pic-wrapper::before,
+.catalog__item:nth-child(3n + 2) .catalog__pic-wrapper::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.catalog__item:nth-child(3n + 1) .catalog__pic-wrapper::before {
+  @include size(180px, 180px);
+  top: 156px;
+  left: -61px;
+  border: 27px solid $main;
+  border-radius: 50%;
+  z-index: -1;
+
+  @media (max-width: $tablet-width) {
+    @include size(127px, 127px);
+    top: auto;
+    bottom: -28px;
+    left: -37px;
+    border: 18px solid $main;
+  }
+
+  @media (max-width: $mobile-width) {
+    left: -24px;
+  }
+}
+
+.catalog__item:nth-child(3n + 2) .catalog__pic-wrapper::before,
+.catalog__item:nth-child(3n + 2) .catalog__pic-wrapper::after {
+  @include size(47px, 47px);
+  border: 8px solid $main;
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.catalog__item:nth-child(3n + 2) .catalog__pic-wrapper::before {
+  transform: translate(-40%, -40%);
+}
+
+.catalog__item:nth-child(3n + 2) .catalog__pic-wrapper::after {
+  right: 0;
+  bottom: 0;
+  transform: translate(50%, 50%);
+}
+
+.catalog__item:nth-child(3n + 3) .catalog__pic-wrapper::before {
+  @include size(95px, 95px);
+  top: -32px;
+  right: -36px;
+  border: 17px solid $main;
+  border-radius: 50%;
+
+  @media (max-width: $tablet-width) {
+    @include size(68px, 68px);
+    top: -20px;
+    right: -25px;
+    border: 13px solid $main;
+  }
+
+  @media (max-width: $mobile-width) {
+    top: -20px;
+    right: -15px;
+  }
+}
+
+.catalog__pic-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.catalog__bike-type figcaption {
+  @include font(22px, 34px);
+  @include side-margin(25px, 25px);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.5px;
+
+  @media (max-width: $tablet-width) {
+    margin: 0;
+  }
+}

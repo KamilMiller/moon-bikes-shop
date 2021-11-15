@@ -21,12 +21,13 @@
     "postcss": "^8.3.11",
     "postcss-csso": "^5.0.1",
     "sass": "^1.43.4",
-    "stylelint": "14.0.1",
-    "stylelint-config-htmlacademy": "0.1.10"
+    "stylelint": "^14.1.0",
+    "stylelint-config-htmlacademy": "^0.1.11",
+    "stylelint-config-standard-scss": "^2.0.1"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --customSyntax postcss-scss",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
     "start": "gulp"

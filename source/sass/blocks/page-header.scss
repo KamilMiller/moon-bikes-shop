@@ -1,0 +1,82 @@
+// Header.
+
+.page-header__nav-toggle {
+  display: none;
+
+  @media (max-width: $tablet-width) {
+    @include size(50px, 50px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: $main;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      @include size(22px, 1px);
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      background-color: $black;
+    }
+
+    &::before {
+      top: 18px;
+    }
+
+    &::after {
+      bottom: 17px;
+    }
+  }
+
+  &--nojs {
+    display: none;
+  }
+
+  &--close {
+    @media (max-width: $tablet-width) {
+      z-index: 4;
+      background-color: transparent;
+      background-image: url("../img/svg/close.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.page-header__nav-toggle span {
+  @media (max-width: $tablet-width) {
+    @include size(22.5px, 1px);
+    background-color: $black;
+    display: block;
+  }
+}
+
+.page-header__main-nav {
+  @include center-fix-width(72px, $desktop-width);
+  width: 100%;
+
+  @media (max-width: $tablet-width) {
+    @include side-padding(0, 0);
+  }
+}
+
+.page-header__nav-toggle--close span {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}

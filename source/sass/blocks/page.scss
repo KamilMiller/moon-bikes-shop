@@ -1,0 +1,21 @@
+// Page.
+
+.page {
+  min-width: 320px;
+  height: 100%;
+  font-family: "Open Sans", "Tahoma", sans-serif;
+  font-weight: 400;
+  background-color: $white;
+  scroll-behavior: smooth;
+}
+
+.page__body {
+  min-height: 100%;
+  margin: 0;
+}
+
+.page__body--static {
+  @media (max-width: $tablet-width) {
+    overflow: hidden;
+  }
+}

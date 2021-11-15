@@ -1,0 +1,71 @@
+// Callback form.
+
+.callback__form input,
+.callback__form button {
+  @include side-padding(30px, 30px);
+  border-radius: 6px;
+  border: none;
+  box-sizing: border-box;
+
+  @media (max-width: $tablet-width) {
+    @include side-padding(21px, 21px);
+  }
+
+  @media (max-width: $mobile-width) {
+    @include side-padding(25px, 25px);
+  }
+}
+
+.callback__form input {
+  @include size(100%, 48px);
+  margin-bottom: 20px;
+  outline: none;
+
+  &:hover {
+    outline: 2px solid $input-border;
+  }
+
+  &:focus {
+    outline: 2px solid $main;
+  }
+
+  @media (max-width: $tablet-width) {
+    border: 1px solid $input-border;
+
+    &:hover {
+      outline: 1px solid $input-border;
+    }
+
+    &:focus {
+      border-color: $main;
+      outline-color: $main;
+    }
+  }
+}
+
+.callback__form input::placeholder {
+  @include font(15px, 24px);
+  color: $placeholder;
+}
+
+.callback__form button {
+  @include font(15px, 21px);
+  width: 100%;
+  min-height: 48px;
+  font-weight: 600;
+  background-color: $main;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media (max-width: $tablet-width) {
+    min-height: 51px;
+    margin-bottom: 30px;
+  }
+}

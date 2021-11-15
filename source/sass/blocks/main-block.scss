@@ -1,0 +1,148 @@
+// Main block.
+
+.main-block {
+  @include center-fix-width(0, $desktop-width);
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 241px;
+  padding-top: 256px;
+
+  @media (max-width: $tablet-width) {
+    padding-top: 0;
+    margin-bottom: 7px;
+  }
+}
+
+.main-block__signboard,
+.main-block__callback {
+  width: 50%;
+  box-sizing: border-box;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+  }
+}
+
+.main-block__signboard {
+  @include side-padding(72px, 50px);
+
+  @media (max-width: $tablet-width) {
+    padding: 23px 21px;
+    background-color: $dark-background;
+    background-image: url("../img/jpg/header-back-tablet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/jpg/header-back-tablet@2x.jpg");
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 25px 18px;
+    background-size: cover;
+  }
+}
+
+.main-block__signboard::before {
+  @media (min-width: $desktop-width) {
+    @include size(100%, 825px);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    display: block;
+    top: 0;
+    left: 0;
+    background-color: $dark-background;
+    background-image: url("../img/jpg/header-back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/jpg/header-back@2x.jpg");
+    }
+  }
+}
+
+.main-block__signboard a {
+  display: block;
+  margin-bottom: 27px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 89px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 73px;
+  }
+}
+
+.main-block__signboard h2 {
+  @include font(46px, 64px);
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: $white;
+
+  @media (max-width: $tablet-width) {
+    @include font(30px, 42px);
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+}
+
+.main-block__signboard p {
+  @include font(20px, 32px);
+  margin: 0;
+  font-weight: 300;
+  color: $white;
+  opacity: 0.8;
+
+  @media (max-width: $tablet-width) {
+    @include side-margin(auto, auto);
+    max-width: 435px;
+    margin-bottom: 56px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 44px;
+  }
+}
+
+.main-block__callback {
+  @include side-padding(113px, 72px);
+
+  @media (max-width: $tablet-width) {
+    @include center-fix-width(0, 352px);
+    @include side-padding(15px, 15px);
+    // min-height: 380px;
+    padding-top: 70px;
+    box-sizing: border-box;
+  }
+}
+
+.main-block__callback p {
+  @include font(17px, 28px);
+  margin-top: 4px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: $white;
+  text-align: center;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: $black;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 20px;
+  }
+}
