@@ -11,6 +11,12 @@
     padding-top: 0;
     margin-bottom: 7px;
   }
+
+  &--open-nav {
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
 }
 
 .main-block__signboard,
@@ -42,27 +48,6 @@
   @media (max-width: $mobile-width) {
     padding: 25px 18px;
     background-size: cover;
-  }
-}
-
-.main-block__signboard::before {
-  @media (min-width: $desktop-width) {
-    @include size(100%, 825px);
-    content: "";
-    position: absolute;
-    z-index: -1;
-    display: block;
-    top: 0;
-    left: 0;
-    background-color: $dark-background;
-    background-image: url("../img/jpg/header-back.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/jpg/header-back@2x.jpg");
-    }
   }
 }
 
@@ -120,7 +105,6 @@
   @media (max-width: $tablet-width) {
     @include center-fix-width(0, 352px);
     @include side-padding(15px, 15px);
-    // min-height: 380px;
     padding-top: 70px;
     box-sizing: border-box;
   }

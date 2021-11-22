@@ -3,6 +3,12 @@
 .page-footer {
   text-align: center;
   border: 1px solid transparent;
+
+  &--open-nav {
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
 }
 
 .page-footer__location {
@@ -153,25 +159,35 @@
   }
 }
 
-.page-footer__contacts-logo-email {
-  margin-right: 15px;
+.page-footer__contacts-logo {
+  &--email {
+    margin-right: 15px;
 
-  @media (max-width: $mobile-width) {
-    margin-left: 8px;
-    margin-right: 16px;
+    @media (max-width: $mobile-width) {
+      margin-left: 8px;
+      margin-right: 16px;
+    }
+  }
+
+  &--phone {
+    margin-left: 4px;
+    margin-right: 17px;
+
+    @media (max-width: $tablet-width) {
+      margin-left: 7px;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin-left: -10px;
+      margin-right: 17px;
+    }
   }
 }
 
-.page-footer__contacts-logo-phone {
-  margin-left: 4px;
-  margin-right: 17px;
+.page-footer__contacts-list-item:hover .page-footer__contacts-logo {
+  opacity: 0.8;
+}
 
-  @media (max-width: $tablet-width) {
-    margin-left: 7px;
-  }
-
-  @media (max-width: $mobile-width) {
-    margin-left: -10px;
-    margin-right: 17px;
-  }
+.page-footer__contacts-list-item:active .page-footer__contacts-logo {
+  opacity: 0.6;
 }

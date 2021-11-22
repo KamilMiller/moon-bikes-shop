@@ -10,12 +10,8 @@
 }
 
 .page__body {
+  display: flex;
+  flex-direction: column;
   min-height: 100%;
   margin: 0;
-}
-
-.page__body--static {
-  @media (max-width: $tablet-width) {
-    overflow: hidden;
-  }
 }

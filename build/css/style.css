@@ -21,28 +21,28 @@ img {
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/OpenSans-Light.woff2") format("woff2"), url("../../fonts/OpenSans-Light.woff") format("woff");
+  src: url("../fonts/OpenSans-Light.woff2") format("woff2"), url("../fonts/OpenSans-Light.woff") format("woff");
 }
 @font-face {
   font-family: "Open Sans";
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/OpenSans-Regular.woff2") format("woff2"), url("../../fonts/OpenSans-Regular.woff") format("woff");
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.woff") format("woff");
 }
 @font-face {
   font-family: "Open Sans";
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../../fonts/OpenSans-SemiBold.woff") format("woff");
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
 }
 @font-face {
   font-family: "Open Sans";
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/OpenSans-Bold.woff2") format("woff2"), url("../../fonts/OpenSans-Bold.woff") format("woff");
+  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
 }
 .page {
   min-width: 320px;
@@ -54,13 +54,24 @@ img {
 }
 
 .page__body {
+  display: flex;
+  flex-direction: column;
   min-height: 100%;
   margin: 0;
 }
 
-@media (max-width: 1023px) {
-  .page__body--static {
-    overflow: hidden;
+@media (min-width: 1024px) {
+  .main-screen-wrapper {
+    background-color: #131314;
+    background-image: url("../img/jpg/header-back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+@media (min-width: 1024px) and (min-resolution: 2dppx) {
+  .main-screen-wrapper {
+    background-image: url("../img/jpg/header-back@2x.jpg");
   }
 }
 
@@ -148,6 +159,15 @@ img {
   }
 }
 
+.page-main {
+  flex-grow: 2;
+}
+@media (max-width: 1023px) {
+  .page-main--open-nav {
+    display: none;
+  }
+}
+
 @media (max-width: 1023px) {
   .main-nav {
     display: none;
@@ -205,7 +225,6 @@ img {
 
 @media (max-width: 1023px) {
   .main-nav--js {
-    position: fixed;
     display: block;
     top: 0;
     right: 0;
@@ -252,7 +271,7 @@ img {
   transform: translateY(-50%);
   width: 8px;
   height: 12px;
-  background-image: url("../../img/svg/arrow.svg");
+  background-image: url("../img/svg/arrow.svg");
   background-repeat: no-repeat;
 }
 
@@ -272,6 +291,11 @@ img {
   .main-block {
     padding-top: 0;
     margin-bottom: 7px;
+  }
+}
+@media (max-width: 1023px) {
+  .main-block--open-nav {
+    display: none;
   }
 }
 
@@ -310,29 +334,6 @@ img {
   .main-block__signboard {
     padding: 25px 18px;
     background-size: cover;
-  }
-}
-
-@media (min-width: 1024px) {
-  .main-block__signboard::before {
-    width: 100%;
-    height: 825px;
-    content: "";
-    position: absolute;
-    z-index: -1;
-    display: block;
-    top: 0;
-    left: 0;
-    background-color: #131314;
-    background-image: url("../img/jpg/header-back.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
-}
-@media (min-width: 1024px) and (min-resolution: 2dppx) {
-  .main-block__signboard::before {
-    background-image: url("../img/jpg/header-back@2x.jpg");
   }
 }
 
@@ -516,6 +517,11 @@ img {
   text-align: center;
   border: 1px solid transparent;
 }
+@media (max-width: 1023px) {
+  .page-footer--open-nav {
+    display: none;
+  }
+}
 
 .page-footer__location {
   margin-left: auto;
@@ -697,30 +703,37 @@ img {
   color: #0ad9c6;
 }
 
-.page-footer__contacts-logo-email {
+.page-footer__contacts-logo--email {
   margin-right: 15px;
 }
 @media (max-width: 767px) {
-  .page-footer__contacts-logo-email {
+  .page-footer__contacts-logo--email {
     margin-left: 8px;
     margin-right: 16px;
   }
 }
-
-.page-footer__contacts-logo-phone {
+.page-footer__contacts-logo--phone {
   margin-left: 4px;
   margin-right: 17px;
 }
 @media (max-width: 1023px) {
-  .page-footer__contacts-logo-phone {
+  .page-footer__contacts-logo--phone {
     margin-left: 7px;
   }
 }
 @media (max-width: 767px) {
-  .page-footer__contacts-logo-phone {
+  .page-footer__contacts-logo--phone {
     margin-left: -10px;
     margin-right: 17px;
   }
+}
+
+.page-footer__contacts-list-item:hover .page-footer__contacts-logo {
+  opacity: 0.8;
+}
+
+.page-footer__contacts-list-item:active .page-footer__contacts-logo {
+  opacity: 0.6;
 }
 
 .features {
@@ -836,6 +849,7 @@ img {
 .catalog {
   background-color: #f6f7f9;
   border-bottom: 1px solid #f6f7f9;
+  overflow: hidden;
 }
 
 .catalog__inner {
@@ -1049,19 +1063,19 @@ img {
 
 .tutorial-video {
   padding-top: 122px;
-  background: linear-gradient(#131314 706px, transparent 706px);
+  background: linear-gradient(#131314 88%, transparent 88%);
   box-sizing: border-box;
 }
 @media (max-width: 1023px) {
   .tutorial-video {
     padding-top: 70px;
-    background: linear-gradient(#131314 413px, transparent 413px);
+    background: linear-gradient(#131314 83%, transparent 83%);
   }
 }
 @media (max-width: 767px) {
   .tutorial-video {
     padding-top: 84px;
-    background: linear-gradient(#131314 384px, transparent 384px);
+    background: linear-gradient(#131314 89%, transparent 89%);
   }
 }
 
@@ -1142,8 +1156,6 @@ img {
   .tutorial-video__screen {
     margin-left: auto;
     margin-right: auto;
-    max-width: 504px;
-    max-height: 283px;
   }
 }
 

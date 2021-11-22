@@ -3,6 +3,7 @@
 .catalog {
   background-color: $light-background;
   border-bottom: 1px solid $light-background;
+  overflow: hidden;
 }
 
 .catalog__inner {

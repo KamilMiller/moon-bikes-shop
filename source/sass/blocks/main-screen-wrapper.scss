@@ -1,0 +1,15 @@
+// Main Screen.
+
+.main-screen-wrapper {
+  @media (min-width: $desktop-width) {
+    background-color: $dark-background;
+    background-image: url("../img/jpg/header-back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/jpg/header-back@2x.jpg");
+    }
+  }
+}

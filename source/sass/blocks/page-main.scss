@@ -1,0 +1,11 @@
+// Main.
+
+.page-main {
+  flex-grow: 2;
+
+  &--open-nav {
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+}

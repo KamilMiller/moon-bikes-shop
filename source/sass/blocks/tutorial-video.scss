@@ -2,17 +2,17 @@
 
 .tutorial-video {
   padding-top: 122px;
-  background: linear-gradient($dark-background 706px, transparent 706px);
+  background: linear-gradient($dark-background 88%, transparent 88%);
   box-sizing: border-box;
 
   @media (max-width: $tablet-width) {
     padding-top: 70px;
-    background: linear-gradient($dark-background 413px, transparent 413px);
+    background: linear-gradient($dark-background 83%, transparent 83%);
   }
 
   @media (max-width: $mobile-width) {
     padding-top: 84px;
-    background: linear-gradient($dark-background 384px, transparent 384px);
+    background: linear-gradient($dark-background 89%, transparent 89%);
   }
 }
 
@@ -75,8 +75,6 @@
 
   @media (max-width: $mobile-width) {
     @include side-margin(auto, auto);
-    max-width: 504px;
-    max-height: 283px;
   }
 }
 

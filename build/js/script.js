@@ -1,6 +1,8 @@
 // Constants.
 
-const body = document.querySelector('body');
+const mainBlock = document.querySelector('.main-block');
+const pageMain = document.querySelector('main');
+const pageFooter = document.querySelector('.page-footer');
 const mainMenu = document.querySelector('.main-nav');
 const mainMenuItem = mainMenu.querySelectorAll('.main-nav__item');
 const mainMenuButton = document.querySelector('.page-header__nav-toggle');
@@ -19,7 +21,9 @@ mainMenuButton.classList.remove('page-header__nav-toggle--nojs');
 const closeMenu = () => {
   mainMenu.classList.remove('main-nav--js');
   mainMenuButton.classList.remove('page-header__nav-toggle--close');
-  body.classList.remove('page__body--static');
+  mainBlock.classList.remove('main-block--open-nav');
+  pageMain.classList.remove('page-main--open-nav');
+  pageFooter.classList.remove('page-footer--open-nav');
 };
 
 const onMenuEscKeyDown = (evt) => {
@@ -32,7 +36,9 @@ const onMenuEscKeyDown = (evt) => {
 mainMenuButton.addEventListener('click', () => {
   mainMenu.classList.toggle('main-nav--js');
   mainMenuButton.classList.toggle('page-header__nav-toggle--close');
-  body.classList.toggle('page__body--static');
+  mainBlock.classList.toggle('main-block--open-nav');
+  pageMain.classList.toggle('page-main--open-nav');
+  pageFooter.classList.toggle('page-footer--open-nav');
   if (mainMenu.classList.contains('main-nav--js')) {
     document.addEventListener('keydown', onMenuEscKeyDown);
   } else {
