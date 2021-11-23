@@ -13,12 +13,19 @@
   }
 }
 
+.main-nav--nojs .main-nav__list {
+  @media (max-width: $tablet-width) {
+    @include side-padding(22px, 22px);
+    column-gap: 50px;
+  }
+}
+
 .main-nav__list {
   @include list-reset;
   @include side-padding(7px, 10px);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  column-gap: 104px;
   margin: 0;
   padding-top: 21px;
   border-bottom: 1px solid rgba($white, 0.2);
